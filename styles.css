@@ -19,7 +19,7 @@
   --transition: all 0.25s ease;     /* Slightly faster for better responsiveness */
   --bg-color: #f8fafc;              /* Cleaner, less blue-tinted background */
   --card-bg: #ffffff;               /* White for contrast */
-  --nav-bg: rgba(255, 255, 255, 0.95); /* Barely transparent nav */
+  --nav-bg: rgba(255, 255, 255, 0.789); /* Barely transparent nav */
   --navlink-bg: #f1f5f9;            /* Defined hover state for nav */
 }
 
@@ -35,7 +35,7 @@
   --shadow-color: rgba(0, 0, 0, 0.279); /* Deeper shadow for better depth */
   --bg-color: #0f172a;              /* Deep navy */
   --card-bg: #1e293b9b;               /* Lighter blue-slate for cards */
-  --nav-bg: rgba(15, 23, 42, 0.9);  /* More opaque nav for readability */
+  --nav-bg: rgba(15, 23, 42, 0.728);  /* More opaque nav for readability */
   --navlink-bg: #1e293b;            /* More distinct nav hover state */
 }
 
@@ -100,7 +100,7 @@ a:hover {
   z-index: 1000;
   top: 0;
   left: 0;
-  backdrop-filter: blur(70px);
+  backdrop-filter: blur(10px);
   transition: backdrop-filter 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
