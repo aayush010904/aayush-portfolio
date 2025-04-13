@@ -7,40 +7,37 @@
 
 :root {
   /* Light mode - refined blue-centric professional theme */
-  --primary-color: #1a56db;         /* Richer medium blue, less harsh than deep blue */
-  --secondary-color: #3b82f6;       /* Vibrant accessible blue */
-  --accent-color: #f59e0b;          /* Warm amber accent for better contrast */
-  --light-color: #ffffff;           /* Pure white */
-  --dark-color: #111827;            /* Nearly black with slight blue undertone */
-  --text-color: #334155;            /* Softer slate blue - more readable */
-  --border-color: #e2e8f0;          /* Subtle cool grey border */
+  --primary-color: #1a56db; /* Richer medium blue, less harsh than deep blue */
+  --secondary-color: #3b82f6; /* Vibrant accessible blue */
+  --accent-color: #f59e0b; /* Warm amber accent for better contrast */
+  --light-color: #ffffff; /* Pure white */
+  --dark-color: #111827; /* Nearly black with slight blue undertone */
+  --text-color: #334155; /* Softer slate blue - more readable */
+  --border-color: #e2e8f0; /* Subtle cool grey border */
   --shadow-color: rgba(15, 23, 42, 0.11); /* More neutral shadow */
-  --success-color: #0ea5e9;         /* True sky blue - clearer status indicator */
-  --transition: all 0.25s ease;     /* Slightly faster for better responsiveness */
-  --bg-color: #f8fafc;              /* Cleaner, less blue-tinted background */
-  --card-bg: #ffffff;               /* White for contrast */
+  --success-color: #0ea5e9; /* True sky blue - clearer status indicator */
+  --transition: all 0.25s ease; /* Slightly faster for better responsiveness */
+  --bg-color: #f8fafc; /* Cleaner, less blue-tinted background */
+  --card-bg: #ffffff; /* White for contrast */
   --nav-bg: rgba(255, 255, 255, 0.789); /* Barely transparent nav */
-  --navlink-bg: #f1f5f9;            /* Defined hover state for nav */
+  --navlink-bg: #f1f5f9; /* Defined hover state for nav */
 }
 
 [data-theme="dark"] {
   /* Dark mode - enhanced contrast with strategic accents */
-  --primary-color: #1f437e;         /* Brighter blue for better visibility */
-  --secondary-color: #5693de;       /* Lighter complementary blue */
-  --accent-color: #f59e0b;          /* Consistent amber accent */
-  --light-color: #0f172a;           /* Deep navy background */
-  --dark-color: #f1f5f9;            /* Light text for readability */
-  --text-color: #e2e8f0;            /* Slightly warmer light text */
-  --border-color: #293549;          /* More visible borders */
+  --primary-color: #1f437e; /* Brighter blue for better visibility */
+  --secondary-color: #5693de; /* Lighter complementary blue */
+  --accent-color: #f59e0b; /* Consistent amber accent */
+  --light-color: #0f172a; /* Deep navy background */
+  --dark-color: #f1f5f9; /* Light text for readability */
+  --text-color: #e2e8f0; /* Slightly warmer light text */
+  --border-color: #293549; /* More visible borders */
   --shadow-color: rgba(0, 0, 0, 0.279); /* Deeper shadow for better depth */
-  --bg-color: #0f172a;              /* Deep navy */
-  --card-bg: #1e293b9b;               /* Lighter blue-slate for cards */
-  --nav-bg: rgba(15, 23, 42, 0.728);  /* More opaque nav for readability */
-  --navlink-bg: #1e293b;            /* More distinct nav hover state */
+  --bg-color: #0f172a; /* Deep navy */
+  --card-bg: #1e293b9b; /* Lighter blue-slate for cards */
+  --nav-bg: rgba(15, 23, 42, 0.728); /* More opaque nav for readability */
+  --navlink-bg: #1e293b; /* More distinct nav hover state */
 }
-
-
-
 
 /* Common elements */
 html {
@@ -57,6 +54,11 @@ body {
   overflow-x: hidden;
   position: relative;
   -webkit-overflow-scrolling: touch;
+}
+
+:target {
+  scroll-margin-top: 0;
+  animation: none;
 }
 
 h1,
@@ -91,7 +93,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:var(--nav-bg);
+  background-color: var(--nav-bg);
   color: var(--text-color);
   padding: 1rem 2rem;
   height: 70px;
@@ -105,11 +107,9 @@ a:hover {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-
-
 .brand-name {
-    font-family: "EB Garamond", serif;
-    font-weight: 500;
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
   font-size: 1.3rem;
   letter-spacing: 1px;
 }
@@ -122,7 +122,6 @@ a:hover {
 .navbar-links li {
   padding: 0 1.5rem;
   position: relative;
-  
 }
 
 .navbar-links a {
@@ -177,7 +176,7 @@ header {
     var(--secondary-color)
   );
   color: white;
-  
+
   display: flex;
   align-items: center;
 }
@@ -194,10 +193,10 @@ header {
 }
 
 .profile-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
 
   gap: 25px;
 }
@@ -210,7 +209,7 @@ header {
 
   object-fit: cover;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  
+
   transition: transform 0.3s ease;
 }
 
@@ -556,7 +555,6 @@ section {
     height: 35px;
     display: block;
     margin: 0 auto;
-
   }
 
   .label {
@@ -753,7 +751,7 @@ section {
   .projects-wrapper {
     padding: 0 10px;
   }
-  
+
   .nav-arrow {
     width: 50px;
     height: 50px;
@@ -765,13 +763,13 @@ section {
     width: 85vw;
     min-width: 200px;
   }
-  
+
   .nav-arrow {
     width: 45px;
     height: 45px;
     font-size: 0.8rem;
   }
-  
+
   .projects-pagination {
     gap: 10px;
   }
@@ -1117,12 +1115,12 @@ footer {
 }
 
 @media (max-width: 600px) {
- .profile-img{
+  .profile-img {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
- }
+  }
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
   }
