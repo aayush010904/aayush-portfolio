@@ -61,6 +61,7 @@ const Certifications = () => {
   return (
     <section
       id="certifications"
+      style={{ minHeight: "100dvh" }}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background gradient shapes */}

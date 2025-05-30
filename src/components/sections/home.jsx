@@ -39,7 +39,8 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ minHeight: "100dvh" }}
+      className="relative flex items-center justify-center overflow-hidden"
     >
       {/* Background gradient shapes */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[32rem] h-[32rem] bg-blue-500/20 rounded-full filter blur-3xl z-0"></div>

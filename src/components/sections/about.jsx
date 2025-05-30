@@ -85,6 +85,7 @@ export const About = () => {
   return (
     <section
       id="about"
+      style={{minHeight: "100dvh"}}
       className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto w-full">
