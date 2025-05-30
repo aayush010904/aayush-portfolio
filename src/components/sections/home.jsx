@@ -89,11 +89,11 @@ export const Home = () => {
             Building modern and innovative AI solutions.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-row flex-wrap gap-4 justify-center items-center">
             <a
               href="/src/docs/resume.pdf"
               target="_blank"
-              className={`px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 active:scale-95 ${
+              className={`px-5 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 active:scale-95 ${
                 isDark
                   ? "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-900/40"
                   : "bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/25"
@@ -103,7 +103,7 @@ export const Home = () => {
             </a>
             <a
               href="#contact"
-              className={`px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 active:scale-95 ${
+              className={`px-5 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 active:scale-95 ${
                 isDark
                   ? "bg-transparent border border-blue-400 text-blue-400 hover:bg-blue-900/30"
                   : "bg-transparent border border-blue-600 text-blue-600 hover:bg-blue-50"
