@@ -5,8 +5,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #f8fafc; /* or your preferred solid color */
-  color: #fff;
+  /* background: #f8fafc;  <-- Remove or comment this out */
+  /* color: #fff;          <-- Remove or comment this out */
   min-height: 100dvh;
 }
 
@@ -62,3 +62,11 @@ body {
   opacity: 1;
   transform: translateY(0);
 } */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

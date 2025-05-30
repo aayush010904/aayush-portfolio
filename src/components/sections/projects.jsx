@@ -106,9 +106,11 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects"
-      style={{ minHeight: "100dvh" }} 
-    className="py-16 md:py-20">
+    <section
+      id="projects"
+      style={{ minHeight: "100dvh" }}
+      className="py-16 md:py-20"
+    >
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <h2
@@ -127,71 +129,88 @@ export const Projects = () => {
             Here are some of my recent projects that showcase my skills and
             passion for development.
           </p>
-        </div>
 
-        <div className="relative px-6 md:px-12">
-          <button
-            onClick={prevProject}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95 ${
-              isDark
-                ? "bg-white/10 hover:bg-white/20 text-white shadow-lg shadow-black/20"
-                : "bg-white/60 hover:bg-white/80 text-gray-700 shadow-lg shadow-gray-900/10"
-            }`}
-            aria-label="Previous project"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="relative px-2 sm:px-6 md:px-12">
+            {/* Carousel navigation buttons (hide on mobile) */}
+            <button
+              onClick={prevProject}
+              className={`hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95
+      ${
+        isDark
+          ? "bg-white/10 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+          : "bg-white/60 hover:bg-white/80 text-gray-700 shadow-lg shadow-gray-900/10"
+      }`}
+              aria-label="Previous project"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <button
-            onClick={nextProject}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95 ${
-              isDark
-                ? "bg-white/10 hover:bg-white/20 text-white shadow-lg shadow-black/20"
-                : "bg-white/60 hover:bg-white/80 text-gray-700 shadow-lg shadow-gray-900/10"
-            }`}
-            aria-label="Next project"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={nextProject}
+              className={`hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95
+      ${
+        isDark
+          ? "bg-white/10 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+          : "bg-white/60 hover:bg-white/80 text-gray-700 shadow-lg shadow-gray-900/10"
+      }`}
+              aria-label="Next project"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
 
-          {/* Projects Carousel - Mobile optimized */}
-          <div className="overflow-hidden">
+            {/* Projects Carousel */}
             <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${
-                  currentIndex * (100 / cardsPerView)
-                }%)`,
-              }}
+              className={`
+      flex gap-4 md:gap-0
+      ${
+        cardsPerView === 1
+          ? "overflow-x-auto flex-nowrap scroll-smooth no-scrollbar"
+          : "md:overflow-hidden"
+      }
+    `}
+              style={
+                cardsPerView > 1
+                  ? {
+                      transform: `translateX(-${
+                        currentIndex * (100 / cardsPerView)
+                      }%)`,
+                      transition: "transform 0.5s ease-in-out",
+                    }
+                  : {}
+              }
             >
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4 pb-4 sm:pb-8 pt-4 sm:pt-8"
+                  className={`
+          ${cardsPerView === 1 ? "min-w-[85vw] max-w-xs" : "w-80"}
+          flex-shrink-0
+          md:w-1/2 lg:w-1/3
+          px-2 sm:px-4 pb-4 sm:pb-8 pt-4 sm:pt-8
+        `}
                 >
                   <div
                     className={`group rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 h-full flex flex-col backdrop-blur-sm border ${
@@ -260,25 +279,26 @@ export const Projects = () => {
                 </div>
               ))}
             </div>
-          </div>
 
-          <div className="flex justify-center mt-6 md:mt-8 space-x-2">
-            {Array.from({
-              length: Math.ceil(projects.length / cardsPerView),
-            }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToProject(index)}
-                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-blue-500 scale-125"
-                    : isDark
-                    ? "bg-white/20 hover:bg-white/30"
-                    : "bg-gray-300/60 hover:bg-gray-400/60"
-                }`}
-                aria-label={`Go to project set ${index + 1}`}
-              />
-            ))}
+            {/* Pagination dots (hide on mobile) */}
+            <div className="hidden md:flex justify-center mt-6 md:mt-8 space-x-2">
+              {Array.from({
+                length: Math.ceil(projects.length / cardsPerView),
+              }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToProject(index)}
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "bg-blue-500 scale-125"
+                      : isDark
+                      ? "bg-white/20 hover:bg-white/30"
+                      : "bg-gray-300/60 hover:bg-gray-400/60"
+                  }`}
+                  aria-label={`Go to project set ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
