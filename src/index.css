@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -8,6 +12,7 @@ body {
   /* background: #f8fafc;  <-- Remove or comment this out */
   /* color: #fff;          <-- Remove or comment this out */
   min-height: 100dvh;
+  /* scroll-snap-type: y mandatory; */
 }
 
 body {
@@ -52,7 +57,7 @@ body {
   }
 }
 
-/* .reveal {
+.reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.7s ease, transform 0.7s ease;
@@ -61,4 +66,4 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-} */
+}

@@ -15,50 +15,75 @@ function AppContent() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { isDark } = useTheme();
-  
+
   // Close mobile menu when clicking outside or scrolling
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (menuOpen && !e.target.closest('.mobile-menu') && !e.target.closest('.menu-button')) {
+      if (
+        menuOpen &&
+        !e.target.closest(".mobile-menu") &&
+        !e.target.closest(".menu-button")
+      ) {
         setMenuOpen(false);
       }
     };
-    
+
     const handleScroll = () => {
       if (menuOpen) setMenuOpen(false);
     };
-    
-    document.addEventListener('click', handleClickOutside);
-    window.addEventListener('scroll', handleScroll);
-    
+
+    document.addEventListener("click", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      document.removeEventListener('click', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("click", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [menuOpen]);
+
+  // Intersection Observer for reveal animations
+  useEffect(() => {
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new window.IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    reveals.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
-      
-      <div 
+
+      <div
         className={`min-h-screen transition-all duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         } ${
-          isDark 
-            ? "bg-gradient-to-br from-gray-900 via-black to-blue-900 text-gray-100" 
+          isDark
+            ? "bg-gradient-to-br from-gray-900 via-black to-blue-900 text-gray-100"
             : "bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-gray-900"
         } bg-fixed`}
       >
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} className="mobile-menu"/>
-        
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <MobileMenu
+          menuOpen={menuOpen}
+          setMenuOpen={setMenuOpen}
+          className="mobile-menu"
+        />
+
         <main className="overflow-hidden">
-          <Home/>
-          <About/>
-          <Projects/>
-          <Certifications/>
-          <Contact/>
+          <Home />
+          <About />
+          <Projects />
+          <Certifications />
+          <Contact />
         </main>
       </div>
     </>

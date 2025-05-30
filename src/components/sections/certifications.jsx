@@ -62,7 +62,7 @@ const Certifications = () => {
     <section
       id="certifications"
       style={{ minHeight: "100dvh" }}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="reveal relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background gradient shapes */}
       <div className="absolute top-1/4 right-0 w-72 h-72 bg-blue-500/10 rounded-full filter blur-3xl"></div>
@@ -87,7 +87,7 @@ const Certifications = () => {
               href={cert.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative p-6 rounded-xl backdrop-blur-lg border transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer block ${
+              className={`group relative p-6 rounded-xl backdrop-blur-lg border transition-all duration-300 shadow-xl hover:-translate-y-2 hover:scale-105 hover:shadow-2xl cursor-pointer block ${
                 isDark
                   ? " border-white/10  hover:border-blue-500/50"
                   : " border-white/20  hover:border-blue-300/50"

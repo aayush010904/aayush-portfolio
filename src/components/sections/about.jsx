@@ -85,13 +85,13 @@ export const About = () => {
   return (
     <section
       id="about"
-      style={{minHeight: "100dvh"}}
-      className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4 sm:px-6 lg:px-8"
+      style={{ minHeight: "100dvh" }}
+      className="reveal min-h-screen flex items-center justify-center py-16 md:py-20 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-6xl mx-auto w-full">
         <div className="text-center mb-12 md:mb-16">
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 transition-colors duration-300 ${
+            className={`text-3xl md:text-4xl font-bold mb-4 ${
               isDark ? "text-white" : "text-gray-900"
             }`}
           >

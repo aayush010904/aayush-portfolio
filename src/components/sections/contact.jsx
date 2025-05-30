@@ -34,11 +34,11 @@ export const Contact = () => {
   return (
     <section id="contact" 
     style={{ minHeight: "100dvh" }}
-    className="py-16 md:py-20">
+    className="reveal py-16 md:py-20">
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-10 md:mb-12">
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-colors duration-300 ${
+            className={`text-3xl md:text-4xl font-bold mb-4 ${
               isDark ? "text-white" : "text-gray-900"
             }`}
           >
