@@ -92,7 +92,7 @@ export const Home = () => {
 
           <div className="flex flex-row flex-wrap gap-4 justify-center items-center">
             <a
-              href="/resume.pdf"
+              href="/src/docs/resume.pdf"
               target="_blank"
               className={`px-5 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 active:scale-95 ${
                 isDark

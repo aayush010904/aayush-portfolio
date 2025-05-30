@@ -149,6 +149,7 @@ export const Projects = () => {
   }, [nextProject, prevProject]);
 
   return (
+<<<<<<< HEAD
     <section
       id="projects"
       className="py-12 sm:py-16 md:py-20 min-h-screen flex items-center"
@@ -156,6 +157,13 @@ export const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
+=======
+    <section id="projects"
+      style={{ minHeight: "100dvh" }} 
+    className="py-16 md:py-20">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-center mb-12 md:mb-16">
+>>>>>>> parent of c4f8202 (minor bugs fixed)
           <h2
             className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 transition-colors duration-300 ${
               isDark ? "text-white" : "text-gray-900"
@@ -174,6 +182,7 @@ export const Projects = () => {
           </p>
         </div>
 
+<<<<<<< HEAD
         {/* Projects Container */}
         <div className="relative md:px-8 lg:px-12">
           {/* Navigation Buttons - Desktop Only */}
@@ -240,20 +249,82 @@ export const Projects = () => {
           >
             <div
               className="flex transition-transform duration-500 ease-out"
+=======
+        <div className="relative px-6 md:px-12">
+          <button
+            onClick={prevProject}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95 ${
+              isDark
+                ? "bg-white/10 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+                : "bg-white/60 hover:bg-white/80 text-gray-700 shadow-lg shadow-gray-900/10"
+            }`}
+            aria-label="Previous project"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={nextProject}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95 ${
+              isDark
+                ? "bg-white/10 hover:bg-white/20 text-white shadow-lg shadow-black/20"
+                : "bg-white/60 hover:bg-white/80 text-gray-700 shadow-lg shadow-gray-900/10"
+            }`}
+            aria-label="Next project"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          {/* Projects Carousel - Mobile optimized */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+>>>>>>> parent of c4f8202 (minor bugs fixed)
               style={{
                 transform: `translateX(-${
                   currentIndex * (100 / cardsPerView)
                 }%)`,
+<<<<<<< HEAD
                 width: `${(projects.length * 100) / cardsPerView}%`,
+=======
+>>>>>>> parent of c4f8202 (minor bugs fixed)
               }}
             >
               {projects.map((project, index) => (
                 <div
                   key={index}
+<<<<<<< HEAD
                   className="flex-shrink-0 px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-4"
                   style={{
                     width: `${100 / (projects.length / cardsPerView)}%`,
                   }}
+=======
+                  className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-4 pb-4 sm:pb-8 pt-4 sm:pt-8"
+>>>>>>> parent of c4f8202 (minor bugs fixed)
                 >
                   <ProjectCard project={project} isDark={isDark} />
                 </div>
@@ -261,6 +332,7 @@ export const Projects = () => {
             </div>
           </div>
 
+<<<<<<< HEAD
           {/* Swipe Indicator - Mobile Only */}
           {cardsPerView === 1 && (
             <div className="flex justify-center mt-4 md:hidden">
@@ -276,12 +348,16 @@ export const Projects = () => {
 
           {/* Pagination Dots */}
           <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
+=======
+          <div className="flex justify-center mt-6 md:mt-8 space-x-2">
+>>>>>>> parent of c4f8202 (minor bugs fixed)
             {Array.from({
               length: Math.ceil(projects.length / cardsPerView),
             }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToProject(index)}
+<<<<<<< HEAD
                 className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${
                   index === currentIndex
                     ? "bg-blue-500 scale-125"
@@ -290,6 +366,16 @@ export const Projects = () => {
                     : "bg-gray-400/60 hover:bg-gray-500/60"
                 }`}
                 aria-label={`Go to project group ${index + 1}`}
+=======
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-blue-500 scale-125"
+                    : isDark
+                    ? "bg-white/20 hover:bg-white/30"
+                    : "bg-gray-300/60 hover:bg-gray-400/60"
+                }`}
+                aria-label={`Go to project set ${index + 1}`}
+>>>>>>> parent of c4f8202 (minor bugs fixed)
               />
             ))}
           </div>

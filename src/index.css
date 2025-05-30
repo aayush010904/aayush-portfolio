@@ -5,6 +5,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
+<<<<<<< HEAD
+=======
+  background: #f8fafc; /* or your preferred solid color */
+  color: #fff;
+>>>>>>> parent of c4f8202 (minor bugs fixed)
   min-height: 100dvh;
 }
 
@@ -60,11 +65,3 @@ body {
   opacity: 1;
   transform: translateY(0);
 } */
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
