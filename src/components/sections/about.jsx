@@ -1,5 +1,6 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import { useState } from "react";
+import profileImage from "../../assets/img/profile.jpg"; // Add this import
 import { SiCplusplus, SiC } from "react-icons/si";
 import {
   FaReact,
@@ -7,8 +8,8 @@ import {
   FaNodeJs,
   FaPython,
   FaCss3Alt,
-  FaDatabase, 
-  FaHtml5
+  FaDatabase,
+  FaHtml5,
 } from "react-icons/fa";
 import {
   SiTensorflow,
@@ -18,10 +19,10 @@ import {
   SiJupyter,
   SiDocker,
   SiNumpy,
-  SiPandas, 
+  SiPandas,
   SiGit,
-  SiPlotly, 
-  SiTailwindcss
+  SiPlotly,
+  SiTailwindcss,
 } from "react-icons/si";
 
 export const About = () => {
@@ -46,7 +47,11 @@ export const About = () => {
       { name: "HTML", level: 80, icon: <FaHtml5 className="text-lg" /> },
       { name: "CSS", level: 80, icon: <FaCss3Alt className="text-lg" /> },
       { name: "React", level: 60, icon: <FaReact className="text-lg" /> },
-      { name: "Tailwind CSS", level: 70, icon: <SiTailwindcss className="text-lg" /> },
+      {
+        name: "Tailwind CSS",
+        level: 70,
+        icon: <SiTailwindcss className="text-lg" />,
+      },
       { name: "SQL", level: 75, icon: <FaDatabase className="text-lg" /> },
     ],
     tools: [
@@ -109,7 +114,7 @@ export const About = () => {
                     } hover:scale-[1.02] hover:rotate-1`}
                 >
                   <img
-                    src="src/assets/img/profile.jpg"
+                    src={profileImage}
                     alt="Profile"
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -254,16 +259,18 @@ export const About = () => {
                             isDark ? "text-blue-300" : "text-blue-700"
                           }`}
                         >
-                          B.Tech in Electronics and Communication Engineering <br />(Minor in AI/ML)
+                          B.Tech in Electronics and Communication Engineering{" "}
+                          <br />
+                          (Minor in AI/ML)
                         </span>
                         <span
                           className={`block text-sm ${
                             isDark ? "text-gray-400" : "text-gray-600"
                           }`}
                         >
-                          Faculty of Technology, University of Delhi — 2021 - 2025
+                          Faculty of Technology, University of Delhi — 2021 -
+                          2025
                         </span>
-                        
                       </div>
 
                       {/* Additional education entry (if needed) */}
@@ -284,7 +291,6 @@ export const About = () => {
                         >
                           Radiant Academy, Noida — 2019 - 2023
                         </span>
-                        
                       </div>
                     </div>
                   </div>
@@ -329,8 +335,10 @@ export const About = () => {
                             isDark ? "text-gray-300" : "text-gray-700"
                           }`}
                         >
-                          Drove a 30% rise in engagement and 20% sales boost for Ryze using data-driven strategies, applying analytical insights to enhance customer targeting and support a 15% market penetration increase.
-
+                          Drove a 30% rise in engagement and 20% sales boost for
+                          Ryze using data-driven strategies, applying analytical
+                          insights to enhance customer targeting and support a
+                          15% market penetration increase.
                         </span>
                       </div>
                     </div>

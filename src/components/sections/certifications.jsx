@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 
+// Import all logo images
+import ibmLogo from "../../assets/img/ibm.png";
+import stanfordLogo from "../../assets/img/stanford.webp";
+import gdgLogo from "../../assets/img/gdg.png";
+import hackerrankLogo from "../../assets/img/hackerrank.png";
+
 const certificationsData = [
   {
     title: "Introduction to Computer Vision and Image Processing",
     issuer: "IBM",
     year: "2025",
-    logo: "src/assets/img/ibm.png", // Replace with actual logo paths
+    logo: ibmLogo,
     color: "text-blue-500",
     url: "https://www.coursera.org/account/accomplishments/verify/7LBEWB4JTY2U",
   },
@@ -14,7 +20,7 @@ const certificationsData = [
     title: "Machine Learning Specialization",
     issuer: "Stanford University",
     year: "2025",
-    logo: "/src/assets/img/stanford.webp", // Replace with actual logo paths
+    logo: stanfordLogo,
     color: "text-red-500",
     url: "https://www.coursera.org/account/accomplishments/specialization/36VBRWM993M4",
   },
@@ -22,7 +28,7 @@ const certificationsData = [
     title: "Python for Data Science, AI and Development",
     issuer: "IBM",
     year: "2024",
-    logo: "/src/assets/img/ibm.png", // Replace with actual logo paths
+    logo: ibmLogo,
     color: "text-blue-500",
     url: "https://www.credly.com/badges/901bceac-10d6-42ba-8678-a1f4b0550054/public_url",
   },
@@ -30,7 +36,7 @@ const certificationsData = [
     title: "Python Certification",
     issuer: "GDG-MAD",
     year: "2043",
-    logo: "/src/assets/img/gdg.png", // Replace with actual logo paths
+    logo: gdgLogo,
     color: "text-orange-500",
     url: "https://verify.letsupgrade.in/certificate/LUEPYTJAN12427",
   },
@@ -38,7 +44,7 @@ const certificationsData = [
     title: "Python Programming",
     issuer: "Hackerrank",
     year: "2024",
-    logo: "/src/assets/img/hackerrank.png", // Replace with actual logo paths
+    logo: hackerrankLogo,
     color: "text-green-500",
     url: "https://www.hackerrank.com/certificates/182647bf7bc5",
   },

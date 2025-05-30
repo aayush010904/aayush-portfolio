@@ -1,47 +1,77 @@
-import { useTheme } from '../../contexts/ThemeContext';
-import { useState, useEffect } from 'react';
+import { useTheme } from "../../contexts/ThemeContext";
+import { useState, useEffect } from "react";
+
+// Import all project images
+import haritaxImage from "../../assets/img/haritax.png";
+import saferoadImage from "../../assets/img/saferoad.png";
+import spotifyImage from "../../assets/img/spotify.png";
+import finbotImage from "../../assets/img/finbot.png";
 
 export const Projects = () => {
   const { isDark } = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
-  
+
   // List of projects
   const projects = [
     {
       title: "HaritaX",
-      description: "Hybrid plant disease detection ensemble architecture using CNNs and Transformers.",
-      image: "src/assets/img/haritax.png",
-      tech: ["VGG 16","ResNet 50", "Vision Transformer","Swin Transformer", "PyTorch", "TensorFlow"],
+      description:
+        "Hybrid plant disease detection ensemble architecture using CNNs and Transformers.",
+      image: haritaxImage,
+      tech: [
+        "VGG 16",
+        "ResNet 50",
+        "Vision Transformer",
+        "Swin Transformer",
+        "PyTorch",
+        "TensorFlow",
+      ],
       github: "https://github.com/aayush010904/HaritaX",
-      // live: "#"
     },
     {
       title: "Saferoad AI",
-      description: "A realtime road safety monitoring system using computer vision.",
-      image: "src/assets/img/saferoad.png",
+      description:
+        "A realtime road safety monitoring system using computer vision.",
+      image: saferoadImage,
       tech: ["OpenCV", "Flask", "TensorFlow", "React", "Yolov8"],
       github: "https://github.com/aayush010904/SaferoadAI",
-      
     },
     {
       title: "Spotify Hits Predictor",
-      description: "Predicts the success of songs using machine learning and data analysis.",
-      image: "src/assets/img/spotify.png",
-      tech: ["Python", "Pandas","PCA", "Scikit-learn","SVM","Random Forest","KNN","Logistic Regression"],
+      description:
+        "Predicts the success of songs using machine learning and data analysis.",
+      image: spotifyImage,
+      tech: [
+        "Python",
+        "Pandas",
+        "PCA",
+        "Scikit-learn",
+        "SVM",
+        "Random Forest",
+        "KNN",
+        "Logistic Regression",
+      ],
       github: "https://github.com/aayush010904/spotify_hits_predictor",
-      
     },
     {
       title: "Finance Bot",
-      description: "A chatbot that provides financial insights and stock market analysis using AI Agents.",
-      image: "src/assets/img/finbot.png",
-      tech: ["Groq", "OpenAI", "Python", "Flask","Llama 3","Streamlit","Phidata"],
+      description:
+        "A chatbot that provides financial insights and stock market analysis using AI Agents.",
+      image: finbotImage,
+      tech: [
+        "Groq",
+        "OpenAI",
+        "Python",
+        "Flask",
+        "Llama 3",
+        "Streamlit",
+        "Phidata",
+      ],
       github: "https://github.com/aayush010904/finance-bot",
-      
-    }
+    },
   ];
-  
+
   // Responsive cards per view
   useEffect(() => {
     const handleResize = () => {
@@ -53,24 +83,24 @@ export const Projects = () => {
         setCardsPerView(1);
       }
     };
-    
+
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
   const nextProject = () => {
-    setCurrentIndex(prev => 
+    setCurrentIndex((prev) =>
       prev + 1 >= Math.ceil(projects.length / cardsPerView) ? 0 : prev + 1
     );
   };
-  
+
   const prevProject = () => {
-    setCurrentIndex(prev => 
+    setCurrentIndex((prev) =>
       prev - 1 < 0 ? Math.ceil(projects.length / cardsPerView) - 1 : prev - 1
     );
   };
-  
+
   const goToProject = (index) => {
     setCurrentIndex(index);
   };
@@ -107,8 +137,18 @@ export const Projects = () => {
             }`}
             aria-label="Previous project"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
 
@@ -121,16 +161,30 @@ export const Projects = () => {
             }`}
             aria-label="Next project"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
 
           {/* Projects Carousel - Mobile optimized */}
           <div className="overflow-hidden">
-            <div 
+            <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)` }}
+              style={{
+                transform: `translateX(-${
+                  currentIndex * (100 / cardsPerView)
+                }%)`,
+              }}
             >
               {projects.map((project, index) => (
                 <div
@@ -146,7 +200,9 @@ export const Projects = () => {
                   >
                     <div className="relative overflow-hidden pt-1">
                       <img
-                        src={project.image || "https://via.placeholder.com/400x225"}
+                        src={
+                          project.image || "https://via.placeholder.com/400x225"
+                        }
                         alt={project.title}
                         className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:blur-xs group-hover:scale-105"
                       />
@@ -155,7 +211,7 @@ export const Projects = () => {
                           href={project.github}
                           className="p-2 sm:p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
                           aria-label="View GitHub repository"
-                          target='_blank'
+                          target="_blank"
                         >
                           <svg
                             className="w-4 h-4 sm:w-5 sm:h-5 text-white"
@@ -165,7 +221,6 @@ export const Projects = () => {
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                           </svg>
                         </a>
-                        
                       </div>
                     </div>
 
@@ -206,7 +261,9 @@ export const Projects = () => {
           </div>
 
           <div className="flex justify-center mt-6 md:mt-8 space-x-2">
-            {Array.from({ length: Math.ceil(projects.length / cardsPerView) }).map((_, index) => (
+            {Array.from({
+              length: Math.ceil(projects.length / cardsPerView),
+            }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToProject(index)}
@@ -222,8 +279,6 @@ export const Projects = () => {
             ))}
           </div>
         </div>
-
-        
       </div>
     </section>
   );
