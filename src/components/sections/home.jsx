@@ -112,50 +112,6 @@ export const Home = () => {
               Contact Me
             </a>
           </div>
-
-          {/* Scroll indicator */}
-          <div className="mt-20 flex flex-col items-center">
-            <div className="flex items-center mb-3">
-              <div
-                className={`w-16 h-px ${
-                  isDark ? "bg-gray-700" : "bg-gray-300"
-                }`}
-              ></div>
-              <span
-                className={`mx-4 text-sm ${
-                  isDark ? "text-gray-400" : "text-gray-500"
-                }`}
-              >
-                Scroll Down
-              </span>
-              <div
-                className={`w-16 h-px ${
-                  isDark ? "bg-gray-700" : "bg-gray-300"
-                }`}
-              ></div>
-            </div>
-            <div
-              className={`animate-bounce p-2 rounded-full ${
-                isDark ? "bg-gray-800" : "bg-gray-100"
-              }`}
-            >
-              <svg
-                className={`w-5 h-5 ${
-                  isDark ? "text-gray-400" : "text-gray-600"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </div>
-          </div>
         </div>
       </div>
     </section>
