@@ -1,6 +1,6 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import { useRef, useState } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
   const { isDark } = useTheme();
