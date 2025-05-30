@@ -227,12 +227,53 @@ export const Projects = () => {
                         alt={project.title}
                         className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:blur-xs group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                      {/* Clickable overlay that works on both hover and tap */}
+                      <div
+                        className="absolute inset-0 bg-black/50 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4"
+                        onClick={(event) => {
+                          // On mobile, toggle visibility directly
+                          if (window.innerWidth < 768) {
+                            const overlay = event.currentTarget;
+                            const img = overlay.previousElementSibling;
+
+                            // Toggle the blur on the image (use standard blur class)
+                            img.classList.toggle("blur-sm"); // Changed from blur-xs to blur-sm (Tailwind standard)
+                            img.classList.toggle("scale-105");
+
+                            // Toggle the opacity on the overlay
+                            overlay.classList.toggle("opacity-0");
+                            overlay.classList.toggle("opacity-100");
+
+                            // Wait for tap outside to reset
+                            setTimeout(() => {
+                              const resetBlur = (e) => {
+                                if (!overlay.contains(e.target)) {
+                                  img.classList.remove("blur-sm", "scale-105"); // Changed from blur-xs to blur-sm
+                                  overlay.classList.add("opacity-0");
+                                  overlay.classList.remove("opacity-100");
+                                  document.removeEventListener(
+                                    "click",
+                                    resetBlur
+                                  );
+                                }
+                              };
+                              document.addEventListener("click", resetBlur);
+                            }, 0);
+                          } else {
+                            // On desktop, just open the link
+                            window.open(project.github, "_blank");
+                          }
+                        }}
+                      >
                         <a
                           href={project.github}
                           className="p-2 sm:p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
                           aria-label="View GitHub repository"
                           target="_blank"
+                          onClick={(e) => {
+                            // Prevent the overlay click handler from running twice
+                            e.stopPropagation();
+                          }}
                         >
                           <svg
                             className="w-4 h-4 sm:w-5 sm:h-5 text-white"
@@ -281,15 +322,21 @@ export const Projects = () => {
             </div>
 
             {/* Pagination dots (hide on mobile) */}
-            <div className="hidden md:flex justify-center mt-6 md:mt-8 space-x-2">
+            <div className="flex justify-center mt-6 md:mt-8 space-x-2">
               {Array.from({
-                length: Math.ceil(projects.length / cardsPerView),
+                length:
+                  cardsPerView === 1
+                    ? projects.length
+                    : Math.ceil(projects.length / cardsPerView),
               }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToProject(index)}
                   className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
+                    index ===
+                    (cardsPerView === 1
+                      ? currentIndex % projects.length
+                      : currentIndex)
                       ? "bg-blue-500 scale-125"
                       : isDark
                       ? "bg-white/20 hover:bg-white/30"

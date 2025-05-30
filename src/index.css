@@ -5,8 +5,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  /* background: #f8fafc;  <-- Remove or comment this out */
-  /* color: #fff;          <-- Remove or comment this out */
   min-height: 100dvh;
 }
 
