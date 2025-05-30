@@ -33,9 +33,12 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
         <div className="flex justify-between items-center py-2 md:py-3">
           <a href="#home" className="text-2xl font-bold">
             <span className={isDark ? "text-white" : "text-gray-900"}>
-              Aayush's
+              <span className="block md:hidden">A<span className="text-blue-500">C</span></span>
+              <span className="hidden md:inline">
+                Aayush's
+                <span className="text-blue-500"> portfolio</span>
+              </span>
             </span>
-            <span className="text-blue-500"> portfolio</span>
           </a>
 
           <div className="flex items-center space-x-1 md:space-x-4">
