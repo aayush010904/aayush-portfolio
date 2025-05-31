@@ -32,9 +32,11 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" 
-    style={{ minHeight: "100dvh" }}
-    className="reveal py-16 md:py-20">
+    <section
+      id="contact"
+      style={{ minHeight: "100dvh" }}
+      className="reveal py-16 md:py-20"
+    >
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-10 md:mb-12">
           <h2
@@ -86,6 +88,7 @@ export const Contact = () => {
                         : "bg-blue-100/80 text-blue-700"
                     }`}
                   >
+                    {/* Phone Icon */}
                     <svg
                       className="w-4 h-4 md:w-5 md:h-5"
                       fill="none"
@@ -108,9 +111,16 @@ export const Contact = () => {
                     >
                       Phone
                     </p>
-                    <p className={isDark ? "text-gray-400" : "text-gray-600"}>
+                    <a
+                      href="tel:+919958106338"
+                      className={
+                        isDark
+                          ? "text-gray-400 hover:text-blue-400"
+                          : "text-gray-600 hover:text-blue-600"
+                      }
+                    >
                       +91 99581 06338
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -122,6 +132,7 @@ export const Contact = () => {
                         : "bg-blue-100/80 text-blue-700"
                     }`}
                   >
+                    {/* Email Icon */}
                     <svg
                       className="w-4 h-4 md:w-5 md:h-5"
                       fill="none"
@@ -144,9 +155,16 @@ export const Contact = () => {
                     >
                       Email
                     </p>
-                    <p className={isDark ? "text-gray-400" : "text-gray-600"}>
+                    <a
+                      href="mailto:aayushchauhan019@gmail.com"
+                      className={
+                        isDark
+                          ? "text-gray-400 hover:text-blue-400"
+                          : "text-gray-600 hover:text-blue-600"
+                      }
+                    >
                       aayushchauhan019@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -158,6 +176,7 @@ export const Contact = () => {
                         : "bg-blue-100/80 text-blue-700"
                     }`}
                   >
+                    {/* Location Icon */}
                     <svg
                       className="w-4 h-4 md:w-5 md:h-5"
                       fill="none"
@@ -186,9 +205,18 @@ export const Contact = () => {
                     >
                       Location
                     </p>
-                    <p className={isDark ? "text-gray-400" : "text-gray-600"}>
+                    <a
+                      href="https://www.google.com/maps/place/Noida,+India"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={
+                        isDark
+                          ? "text-gray-400 hover:text-blue-400"
+                          : "text-gray-600 hover:text-blue-600"
+                      }
+                    >
                       Noida, India
-                    </p>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -207,9 +235,9 @@ export const Contact = () => {
                     target="_blank"
                     className={`p-2 rounded-full ${
                       isDark
-                        ? "bg-white/10 text-gray-300 hover:bg-white/20"
-                        : "bg-white/60 text-gray-700 hover:bg-white/80"
-                    } transition-colors`}
+                        ? "bg-white/10 text-gray-300 hover:bg-black/20"
+                        : "bg-white/60 text-gray-700 hover:bg-gray-200"
+                    } transition-colors hover:transform hover:scale-110 ease-in-out duration-200`}
                   >
                     <svg
                       className="w-4 h-4 md:w-5 md:h-5"
@@ -225,9 +253,9 @@ export const Contact = () => {
                     target="_blank"
                     className={`p-2 rounded-full ${
                       isDark
-                        ? "bg-white/10 text-gray-300 hover:bg-white/20"
-                        : "bg-white/60 text-gray-700 hover:bg-white/80"
-                    } transition-colors`}
+                        ? "bg-white/10 text-gray-300 hover:bg-gradient-to-r from-pink-500 to-purple-500"
+                        : "bg-white/60 text-gray-700 hover:bg-gradient-to-r from-pink-200 to-purple-200"
+                    } transition-colors hover:transform hover:scale-110 ease-in-out duration-200`}
                   >
                     <svg
                       className="w-4 h-4 md:w-5 md:h-5"
@@ -242,9 +270,9 @@ export const Contact = () => {
                     target="_blank"
                     className={`p-2 rounded-full ${
                       isDark
-                        ? "bg-white/10 text-gray-300 hover:bg-white/20"
-                        : "bg-white/60 text-gray-700 hover:bg-white/80"
-                    } transition-colors`}
+                        ? "bg-white/10 text-gray-300 hover:bg-white hover:text-blue-900"
+                        : "bg-white/60 text-gray-700 hover:bg-blue-900 hover:text-white"
+                    } transition-colors hover:transform hover:scale-110 ease-in-out duration-200`}
                   >
                     <svg
                       className="w-4 h-4 md:w-5 md:h-5"

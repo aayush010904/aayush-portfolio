@@ -269,8 +269,8 @@ export const About = () => {
                             isDark ? "text-gray-400" : "text-gray-600"
                           }`}
                         >
-                          Faculty of Technology, University of Delhi — 2021 -
-                          2025
+                          Faculty of Technology, University of Delhi — 2023 -
+                          2027
                         </span>
                       </div>
 
