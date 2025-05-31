@@ -20,21 +20,6 @@ body {
   background-attachment: fixed;
   background-position: center;
   color: #111827;
-  background: #ffffff; /* Default light background */
-}
-
-/* Dark mode background (auto) */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(135deg, #000000 0%, #000000 60%, #000000 100%);
-    color: #f3f4f6;
-  }
-}
-
-/* Dark mode background (Tailwind dark class) */
-body.dark {
-  background: linear-gradient(135deg, #000000 0%, #000000 60%, #000000 100%);
-  color: #f3f4f6;
 }
 
 /* For extra parallax effect on the background */
