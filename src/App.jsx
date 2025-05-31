@@ -58,14 +58,20 @@ function AppContent() {
     return () => observer.disconnect();
   }, []);
 
+  // Manage body overflow style based on loading state
+  useEffect(() => {
+    document.body.style.overflow = isLoaded ? "auto" : "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isLoaded]);
+
   return (
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
 
       <div
-        className={`min-h-screen transition-all duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        } ${
+        className={`min-h-screen ${isLoaded ? "block" : "hidden"} ${
           isDark
             ? "bg-gradient-to-br from-gray-900 via-black to-blue-900 text-gray-100"
             : "bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-gray-900"

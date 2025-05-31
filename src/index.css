@@ -9,17 +9,32 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  /* background: #f8fafc;  <-- Remove or comment this out */
-  /* color: #fff;          <-- Remove or comment this out */
   min-height: 100dvh;
-  /* scroll-snap-type: y mandatory; */
+  /* Remove or comment out any static background here */
 }
 
+/* Light mode background */
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+  color: #111827;
+  background: #ffffff; /* Default light background */
+}
+
+/* Dark mode background (auto) */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #000000 0%, #000000 60%, #000000 100%);
+    color: #f3f4f6;
+  }
+}
+
+/* Dark mode background (Tailwind dark class) */
+body.dark {
+  background: linear-gradient(135deg, #000000 0%, #000000 60%, #000000 100%);
+  color: #f3f4f6;
 }
 
 /* For extra parallax effect on the background */
