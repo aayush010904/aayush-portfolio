@@ -183,7 +183,7 @@ export const Projects = () => {
           {visibleProjects.map((project, idx) => (
             <div
               key={idx}
-              className={`max-w-100 relative group rounded-2xl overflow-hidden shadow-xl border border-white/20 dark:border-white/10  backdrop-blur-md transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center justify-center`}
+              className={`max-w-100 relative group rounded-2xl overflow-hidden shadow-xl border border-white/20 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-md transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center justify-center`}
               tabIndex={0}
               aria-label={`Project: ${project.title}`}
               onClick={() => {
