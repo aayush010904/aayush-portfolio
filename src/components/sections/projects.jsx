@@ -162,7 +162,7 @@ export const Projects = () => {
       style={{ minHeight: "100dvh" }}
       className="reveal min-h-screen flex items-center justify-center py-16 md:py-20 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-6xl mx-auto w-full">
+      <div className="max-w-6xl mx-auto w-full flex flex-col items-center justify-center">
         <div className="text-center mb-12 md:mb-16">
           <h2
             className={`text-3xl md:text-4xl font-bold mb-4 ${
@@ -173,14 +173,29 @@ export const Projects = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={`grid gap-8 ${
+            showAll
+              ? "md:grid-cols-2 lg:grid-cols-3"
+              : "md:grid-cols-2 lg:grid-cols-3"
+          } justify-center`}
+        >
           {visibleProjects.map((project, idx) => (
             <div
               key={idx}
-              className={`relative group rounded-2xl overflow-hidden shadow-xl border border-white/20 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-md transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col`}
+              className={`max-w-100 relative group rounded-2xl overflow-hidden shadow-xl border border-white/20 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-md transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center justify-center`}
+              tabIndex={0}
+              aria-label={`Project: ${project.title}`}
               onClick={() => {
                 if (isMobile()) {
                   setActiveCard(activeCard === idx ? null : idx);
+                }
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  if (isMobile()) {
+                    setActiveCard(activeCard === idx ? null : idx);
+                  }
                 }
               }}
             >
@@ -188,6 +203,7 @@ export const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
                   className={`
                     w-full h-48 object-cover transition-all duration-300
                     ${
