@@ -73,8 +73,8 @@ function AppContent() {
       <div
         className={`min-h-screen ${isLoaded ? "block" : "hidden"} ${
           isDark
-            ? "bg-gradient-to-br from-gray-900 via-black to-blue-900 text-gray-100"
-            : "bg-gradient-to-br from-blue-50 via-white to-indigo-50 text-gray-900"
+            ? "bg-gradient-to-br from-gray-900 via-black  to-blue-950 text-gray-100"
+            : "bg-gradient-to-br from-blue-50 via-white to-blue-100 text-gray-900"
         } bg-fixed`}
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
