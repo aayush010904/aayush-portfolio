@@ -1,6 +1,6 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import { useState } from "react";
-import profileImage from "../../assets/img/profile.jpg"; // Add this import
+import profileImage from "../../assets/img/pfp.png"; // Add this import
 import { SiCplusplus, SiC } from "react-icons/si";
 import {
   FaReact,
@@ -34,7 +34,6 @@ export const About = () => {
       { name: "Python", level: 95, icon: <FaPython className="text-lg" /> },
       { name: "C++", level: 60, icon: <SiCplusplus className="text-lg" /> },
       { name: "C", level: 65, icon: <SiC className="text-lg" /> },
-      { name: "JavaScript", level: 45, icon: <FaJs className="text-lg" /> },
     ],
     frameworks: [
       {
@@ -46,7 +45,6 @@ export const About = () => {
       { name: "Keras", level: 65, icon: <SiKeras className="text-lg" /> },
       { name: "HTML", level: 80, icon: <FaHtml5 className="text-lg" /> },
       { name: "CSS", level: 80, icon: <FaCss3Alt className="text-lg" /> },
-      { name: "React", level: 60, icon: <FaReact className="text-lg" /> },
       {
         name: "Tailwind CSS",
         level: 70,
@@ -65,7 +63,7 @@ export const About = () => {
       { name: "Pandas", level: 90, icon: <SiPandas className="text-lg" /> },
       { name: "Matplotlib", level: 85, icon: <SiPlotly className="text-lg" /> },
       { name: "Git", level: 55, icon: <SiGit className="text-lg" /> },
-      { name: "Docker", level: 45, icon: <SiDocker className="text-lg" /> },
+      // { name: "Docker", level: 45, icon: <SiDocker className="text-lg" /> },
     ],
   };
 
