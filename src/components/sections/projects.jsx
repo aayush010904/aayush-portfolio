@@ -6,6 +6,7 @@ import haritaxImage from "../../assets/img/haritax.png";
 import saferoadImage from "../../assets/img/saferoad.png";
 import spotifyImage from "../../assets/img/spotify.png";
 import finbotImage from "../../assets/img/finbot.png";
+import sam from "../../assets/img/ai-shopping-assistant.png";
 
 export const Projects = () => {
   const { isDark } = useTheme();
@@ -19,6 +20,16 @@ export const Projects = () => {
 
   // List of projects
   const projects = [
+    {
+      title: "SAM AI",
+      description:
+        "AI-powered shopping assistant with features like intelligent product search and recommendation, fuzzy matching, sustainable alternatives recommendation, recipe suggestions, and LLM-based intent recognition.",
+      image: sam,
+      tech: [
+        "Python", "FastAPI", "Openrouter LLM", "NLP", "TTS/STT", "Fuzzy Matching", "Recommendation System"
+      ],
+      github: "https://github.com/codeitnav/SAM",
+    },
     {
       title: "HaritaX",
       description:
