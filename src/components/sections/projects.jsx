@@ -23,7 +23,7 @@ export const Projects = () => {
     {
       title: "SAM AI",
       description:
-        "AI-powered shopping assistant with features like intelligent product search and recommendation, fuzzy matching, sustainable alternatives recommendation, recipe suggestions, and LLM-based intent recognition.",
+        "AI-powered shopping assistant enhancing customer experience with intellingent in-store assistant.",
       image: sam,
       tech: [
         "Python", "FastAPI", "Openrouter LLM", "NLP", "TTS/STT", "Fuzzy Matching", "Recommendation System"

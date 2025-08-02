@@ -1,6 +1,6 @@
 import { useTheme } from "../../contexts/ThemeContext";
 import { useState } from "react";
-import profileImage from "../../assets/img/pfp.png"; // Add this import
+import profileImage from "../../assets/img/profile.png"; // Add this import
 import { SiCplusplus, SiC } from "react-icons/si";
 import {
   FaReact,
