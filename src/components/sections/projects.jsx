@@ -7,6 +7,7 @@ import saferoadImage from "../../assets/img/saferoad.png";
 import spotifyImage from "../../assets/img/spotify.png";
 import finbotImage from "../../assets/img/finbot.png";
 import sam from "../../assets/img/ai-shopping-assistant.png";
+import rag from "../../assets/img/rag.png";
 
 export const Projects = () => {
   const { isDark } = useTheme();
@@ -20,6 +21,16 @@ export const Projects = () => {
 
   // List of projects
   const projects = [
+    {
+      title: "Intelligent Document Q&A System",
+      description:
+        "Production-ready RAG system for multi-format document analysis and ultra-fast, context-aware Q&A using LLMs.",
+      image: rag,
+      tech: [
+        "Python", "FastAPI", "Groq LLM", "NLP", "Vector DB", "SentenceTransformer", "RAG"
+      ],
+      github: "https://github.com/aayush010904/rag-document-qa",
+    },
     {
       title: "SAM AI",
       description:
