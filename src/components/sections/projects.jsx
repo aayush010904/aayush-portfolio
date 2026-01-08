@@ -6,6 +6,7 @@ import haritaxImage from "../../assets/img/haritax.png";
 import saferoadImage from "../../assets/img/saferoad.png";
 import spotifyImage from "../../assets/img/spotify.png";
 import finbotImage from "../../assets/img/finbot.png";
+import diplomacy from "../../assets/img/diplomacy.png";
 import sam from "../../assets/img/ai-shopping-assistant.png";
 import rag from "../../assets/img/rag.png";
 
@@ -21,6 +22,16 @@ export const Projects = () => {
 
   // List of projects
   const projects = [
+    {
+      title: "BetrayalNet",
+      description:
+        "A research project focused on identifying deceptive strategies in the game of Diplomacy using machine learning techniques.",
+      image: diplomacy,
+      tech: [
+        "Python", "NLP", "Machine Learning", "Data Analysis", "Game Theory"
+      ],
+      github: "https://github.com/aayush010904/betrayalnet",
+    },
     {
       title: "Intelligent Document Q&A System",
       description:
